@@ -20,7 +20,7 @@ function Header() {
         className="border-black flex fixed w-screen justify-between mt-0 p-1 lg:p-0 z-20"
         style={BackgroundColor}
       >
-        <div className="Logo ps-20 md:ps-40">
+        <div className="Logo ps-10 md:ps-40">
           <img src={HelsingLogo} className="h-12" alt="React Logo" />
         </div>
         <div className="w-full justify-between hidden lg:block pe-20 lg:pe-40 ">
@@ -44,7 +44,7 @@ function Header() {
           <span>
             <button onClick={toggleVisibility}>
               <img
-                className="menu visible lg:hidden p-3 me-20 md:me-40"
+                className="menu visible lg:hidden p-3 me-10 md:me-40"
                 src={Hamburger}
               ></img>
             </button>
