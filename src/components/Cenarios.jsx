@@ -1,5 +1,5 @@
-import img1 from "../assets/Img1.jpg";
-import img2 from "../assets/Img2.jpg";
+import img1 from "../assets/m1.jpeg";
+import img2 from "../assets/m2.jpeg";
 import "../App.css";
 import { React, useRef } from "react";
 
@@ -13,7 +13,7 @@ function Cenario() {
 
   return (
     <>
-      <div className="page-container pt-44 md:pt-32 ">
+      <div className="page-container pt-44 md:pt-40">
         <div className="content">
           <div className="prev" onClick={prev}></div>
           <div className="slide-painel" ref={ImageContainerRef}>
@@ -27,15 +27,15 @@ function Cenario() {
       <div className="flex justify-center mt-20">
         <div className="content-container lg:grid grid-rows-2 lg:grid-cols-2 gap-10 text-white">
           <div className="cardBoss">
-            <h1 className="text-center">Lobisomen</h1>
+            <h1 className="title text-center">Lobisomen</h1>
             <h2>  
             Entre em um mundo sombrio e cheio de mistérios, onde sua coragem será testada ao máximo. Enfrente o lobisomem e prove que você é o verdadeiro herói neste jogo eletrizante! 
             </h2>
           </div>
           <div className="cardBoss">
-            <h1>Mundo 2</h1>
+            <h1 className="title text-center">Frankstein</h1>
             <h2>
-              O desafio mortal contra o Frankstain será uma batalha de morrer
+            Um mundo de mistério e horror, onde sua coragem será testada ao extremo. Enfrente o poderoso Frankenstein e prove que você é o verdadeiro herói neste jogo eletrizante!
             </h2>
           </div >
           <div className="cardBoss">
