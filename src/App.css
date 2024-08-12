@@ -1,0 +1,94 @@
+.Item:hover{
+    border-bottom: 2px solid white;
+}
+
+.Cards-style{
+    width: 20em;
+    height: 30em;
+    border-radius: 10px;
+}
+
+.slider{
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider img{
+    width: 100%;
+    display: none;
+}
+
+img.displaySlide{
+    display: block;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.page-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.slide-painel {
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border-radius: 10px;
+}
+
+.prev, .next{
+    width: 4em;
+    height: 2em;
+    cursor: pointer;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 0.25s;
+}
+
+.prev:hover, .next:hover { transform:scale(1.25) }
+.prev {background-image: url('./assets/al.svg');}
+.next {background-image: url('./assets/ar.svg');}
+
+.itemCar{
+    scroll-snap-align: start;
+    min-width: 100%;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.cardBoss{
+    background-color: rgba(52, 51, 51, 0.785);
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 2px black;
+}
+
+.title{
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.banner{
+   
+}
