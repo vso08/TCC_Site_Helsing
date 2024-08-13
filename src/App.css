@@ -38,9 +38,9 @@ img.displaySlide{
 }
 
 .content{
-    width: 60%;
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -61,6 +61,7 @@ img.displaySlide{
     background-size: cover;
     background-repeat: no-repeat;
     transition: 0.25s;
+    
 }
 
 .prev:hover, .next:hover { transform:scale(1.25) }
@@ -76,19 +77,8 @@ img.displaySlide{
     display: none;
 }
 
-.cardBoss{
-    background-color: rgba(52, 51, 51, 0.785);
-    padding: 20px;
-    margin-top: 10px;
-    border-radius: 10px;
-    box-shadow: 1px 2px black;
-}
 
 .title{
     font-weight: 600;
     font-size: 25px;
-}
-
-.banner{
-   
 }

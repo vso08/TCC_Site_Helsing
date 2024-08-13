@@ -6,7 +6,7 @@ function Menu() {
         <main className="">
             <div className="container mx-auto px-20 pt-52">
                 <div className="banner grid lg:grid-cols-2">
-                    <div className="py-24 md:py-56 flex text-center rounded-sm bg-gradient-to-t md:bg-gradient-to-l from-zinc-900 to-transparent">
+                    <div className="py-24 md:py-56 flex text-center rounded-sm bg-gradient-to-t lg:bg-gradient-to-l from-zinc-900 to-transparent">
                         <h1 className="text-4xl sm:text-5xl md:text-6xl ps-2 sm:ps-2 font-thin me-5 text-white">Se desafie contra inimigos e mundos poderosos! </h1>
                     </div>
                     <div className="flex justify-center text-center items-center bg-gradient-to-t lg:bg-gradient-to-l from-transparent to-zinc-900">
