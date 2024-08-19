@@ -1,25 +1,44 @@
-import HelsingLogo from '../assets/logo.png';
-import '../App.css'
+import HelsingLogo from "../assets/logo.png";
+import "../App.css";
+import Lobo from "../assets/Lobi.png";
 
 function Menu() {
-    return (
-        <main className="">
-            <div className="container mx-auto px-20 pt-52">
-                <div className="banner grid lg:grid-cols-2">
-                    <div className="py-24 md:py-56 flex text-center rounded-sm bg-gradient-to-t lg:bg-gradient-to-l from-zinc-900 to-transparent">
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl ps-2 sm:ps-2 font-thin me-5 text-white">Se desafie contra inimigos e mundos poderosos! </h1>
-                    </div>
-                    <div className="flex justify-center text-center items-center bg-gradient-to-t lg:bg-gradient-to-l from-transparent to-zinc-900">
-                        <div className="Download">
-                            <img src={HelsingLogo} className='h-28 md:h-36 pb-9'></img>
-                            <button className="border px-10 md:px-20 py-3 md:py-5 rounded-2xl md:rounded-2xl text-white bg-gradient-to-r from-yellow-300 to-red-600 outline outline-black outline-1 border-black">
-                                Download
-                            </button>
-                        </div>
-                    </div>
-                </div>
+  return (
+    <main className="bg-opacity-45 bg-black">
+      <div className="container mx-auto px-5 md:px-0 py-40 ">
+        <div className="grid lg:grid-cols-2">
+          <div className="menuBanner grid grid-rows-2">
+            <div className="text-white">
+              <h1 className="font-thin text-4xl md:text-5xl  text-center py-20 md:p-20 bg-black bg-opacity-75">
+                Se desafie contra inimigos poderosos e cenários deslumbrantes
+              </h1>
             </div>
-        </main>
-    )
+            <div className="grid md:grid-cols-4 grid-cols-2 place-items-center">
+              <div className="imgMenu Lobo flex">
+                <img src={Lobo} className="bg-black bg-opacity-35"></img>
+              </div>
+              <div className="imgMenu Frank flex">
+                <img src={Lobo} className="bg-black bg-opacity-35"></img>
+              </div>
+              <div className="imgMenu Vamp flex">
+                <img src={Lobo} className="bg-black bg-opacity-35"></img>
+              </div>
+              <div className="imgMenu Ult flex">
+                <img src={Lobo} className="bg-black bg-opacity-35"></img>
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-center text-center items-center bg-black bg-opacity-80">
+            <div className="Download py-20">
+              <img src={HelsingLogo} className="h-28 md:h-36 pb-9"></img>
+              <button className="btnDownload px-10 md:px-16 py-3 font-semibold text-lg text-white">
+                Baixe Já!
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  );
 }
-export default Menu
+export default Menu;

@@ -10,16 +10,9 @@ function Header() {
     setIsVisible(!isVisible);
   };
 
-  const BackgroundColor = {
-    background: "rgba(17, 17, 17, 1)",
-  };
-
   return (
     <header>
-      <nav
-        className="border-black flex fixed w-screen justify-between mt-0 p-1 lg:p-0 z-20"
-        style={BackgroundColor}
-      >
+      <nav className="bg-gradient-to-b from-black from-10% to-transparent to-80% flex fixed w-screen justify-between mt-0 p-1 lg:p-0 z-20">
         <div className="Logo ps-10 md:ps-40">
           <img src={HelsingLogo} className="h-12" alt="React Logo" />
         </div>
@@ -31,12 +24,9 @@ function Header() {
               </a>
             </li>
             <li>
-              <a href="" className="Item p-3">Sobre Nós</a>
-            </li>
-            <li>
-              <button className="border px-10 rounded-xl text-white bg-gradient-to-r from-yellow-300 to-red-600 outline outline-black outline-1 border-black">
-                Download
-              </button>
+              <a href="" className="Item p-3">
+                Sobre Nós
+              </a>
             </li>
           </ul>
         </div>
