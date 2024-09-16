@@ -1,6 +1,8 @@
 import HelsingLogo from "../assets/logo.png";
 import "../App.css";
 import Lobo from "../assets/Lobi.png";
+import Vamp from "../assets/vamp.png";
+import Frank from "../assets/Frank.png"
 
 function Menu() {
   return (
@@ -15,13 +17,13 @@ function Menu() {
             </div>
             <div className="grid md:grid-cols-4 grid-cols-2 place-items-center">
               <div className="imgMenu Lobo flex">
-                <img src={Lobo} className="bg-black bg-opacity-35"></img>
+                <img src={Lobo} className="Lobo bg-black bg-opacity-35"></img>
               </div>
               <div className="imgMenu Frank flex">
-                <img src={Lobo} className="bg-black bg-opacity-35"></img>
+                <img src={Vamp} className="Vamp bg-black bg-opacity-35"></img>
               </div>
               <div className="imgMenu Vamp flex">
-                <img src={Lobo} className="bg-black bg-opacity-35"></img>
+                <img src={Frank} className="Frank bg-black bg-opacity-35"></img>
               </div>
               <div className="imgMenu Ult flex">
                 <img src={Lobo} className="bg-black bg-opacity-35"></img>

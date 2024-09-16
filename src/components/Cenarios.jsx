@@ -1,53 +1,56 @@
-import { useState, useEffect, useRef} from "react";
+import { useState, useEffect, useRef } from "react";
 import img1 from "../assets/m1.jpeg";
 import img2 from "../assets/m2.jpeg";
 import img3 from "../assets/m3.jpeg";
-import chapeu from "../assets/chapeu.png";
+import Placa from "../assets/Placa.png";
 import "../App.css";
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 
+const images = [img1, img2, img3];
 
- const images = [img1, img2, img3]
-
-
- function Cenario() {
-
+function Cenario() {
   const carousel = useRef();
-  const [width, setWidth] = useState (0)
+  const [width, setWidth] = useState(0);
 
   useEffect(() => {
-    console.log(carousel.current?.scrollWidth, carousel.current?.offsetWidth)
-    setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth)
-  }, [])
+    setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth);
+  }, []);
 
   return (
-    <div className=" bg-zinc-900">
-      <div className="menuBanner">
-        <div className="MainTxt grid grid-cols-2 container mx-auto">
-          <h1 className="text-white RTDyans text-5xl font-extrabold md:self-center">
-            <span className="C text-8xl bg-black opacity-80 rounded-md">C</span>enários
-          </h1>
-          <div className="flex justify-end invisible md:visible">
-            <img src={chapeu} className="py-5 w-20 items-end"></img>
-          </div>
-        </div>
+    <div className="bg-zinc-950">
+      <div className="MainTxt flex justify-between container mx-auto p-5">
+        <h1 className="RTDyans text-white text-5xl md:text-6xl self-center py-6 rounded-md ">
+          <span className="C text-8xl">C</span>enários
+        </h1>
+        <img src={Placa} className="w-24 rounded-md "></img>
       </div>
-      <div className="page-container">
-        <motion.div ref={carousel} className="carousel" whileTap={{cursor: "grabbing"}}>
-          <motion.div 
-            className="inner"
+      <div className="page-container overflow-hidden bg-black">
+        <motion.div
+          ref={carousel}
+          className="carousel cursor-grab overflow-hidden max-w-full"
+          whileTap={{ cursor: "grabbing" }}
+        >
+          <motion.div
+            className="inner flex"
             drag="x"
-            dragConstraints = {{ right: 0, left: -width}}
-            initial={{ x: 100}}
-            animate= {{ x: 0}}
-            transition={{duration: 0.8 }}
+            dragConstraints={{ right: 0, left: -width }}
+            initial={{ x: 100 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.8 }}
           >
-            {images.map(image => (
-              <motion.div className="item" key={image}>
-                  <img src={image} alt="alt text"></img>
+            {images.map((image) => (
+              <motion.div
+                className="item px-2 min-w-[70%] md:min-w-[50%] lg:min-w-[33%] xl:min-w-[25%]"
+                key={image}
+              >
+                <img
+                  src={image}
+                  alt="cenário"
+                  className="w-full h-auto rounded-lg"
+                />
               </motion.div>
             ))}
-            </motion.div>
+          </motion.div>
         </motion.div>
       </div>
     </div>
