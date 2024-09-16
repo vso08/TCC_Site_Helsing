@@ -15,77 +15,12 @@ body {
   margin: 0;
 }
 
-.Cards-style {
-  width: 20em;
-  height: 30em;
-  border-radius: 10px;
-}
-
-.slider {
-  position: relative;
-  width: 100%;
-  margin: auto;
-  overflow: hidden;
-}
-
-.slider img {
-  width: 100%;
-  display: none;
-}
-
-img.displaySlide {
-  display: block;
-}
-
 .page-container {
   width: 100%;
-  height: 100%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.content {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.slide-painel {
-  display: flex;
-  align-items: center;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  border-radius: 10px;
-}
-
-.prev,
-.next {
-  width: 4em;
-  height: 2em;
-  cursor: pointer;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: 0.25s;
-}
-
-.prev:hover,
-.next:hover {
-  transform: scale(1.25);
-}
-.prev {
-  background-image: url("./assets/al.svg");
-}
-.next {
-  background-image: url("./assets/ar.svg");
-}
-
-.itemCar {
-  scroll-snap-align: start;
-  min-width: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -133,10 +68,42 @@ img.displaySlide {
   );
 }
 
-.bossImg:hover{
-    
+@font-face {
+  font-family: RTDyans;
+  src: url(/RTDyansBasic.ttf);
 }
 
-.dir{
-  
+.RTDyans {
+  font-family: RTDyans;
 }
+
+.MainTxt {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.C {
+  color: red;
+}
+
+.inner {
+  display: flex;
+}
+
+.item{
+  min-height: 200px;
+  min-width: 400px;
+  padding: 10px;
+}
+
+.item img{
+  width: 100%;
+  height: 90%;
+  padding-top: 10px;
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+  .carousel{
+    cursor: grab
+  }

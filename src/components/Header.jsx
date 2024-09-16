@@ -2,6 +2,7 @@ import { useState } from "react";
 import HelsingLogo from "../assets/logo.png";
 import Hamburger from "../assets/menu.svg";
 import "../App.css";
+import i from '../assets/i.png'
 
 function Header() {
   const [isVisible, setIsVisible] = useState(false);
@@ -19,12 +20,12 @@ function Header() {
         <div className="w-full justify-between hidden lg:block pe-20 lg:pe-40 ">
           <ul className="list-none p-3 gap-10 xl:gap-20 visible flex flex-row w-full justify-end text-white text-sm xl:text-xl lg:text-lg">
             <li>
-              <a href="" className="Item p-3">
+              <a href="Cenarios.jsx" className="Item p-3">
                 Conteúdos
               </a>
             </li>
             <li>
-              <a href="" className="Item p-3">
+              <a href="" className="Item  p-3">
                 Sobre Nós
               </a>
             </li>
