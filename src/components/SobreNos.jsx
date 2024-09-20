@@ -12,17 +12,23 @@ function Sobre() {
       </div>
       <div className=" bg-black text-white RTDyans p-5">
         <div className="container mx-auto lg:flex text-xl">
-          <article>
-            Helsing é um jogo desafiador que decidimos desenvolver para nosso
-            Trabalho de Conlusão de Curso, possui um estilo 2d e uma
-            jogabilidade mais frenética e compulsiva, o jogo é composto por
-            quato cenários e cada um tem seu chefão local.
+          <article className="pt-3 p-7">
+            Criado por um grupo apaixonado por videogames desde a infância,
+            Helsing é um jogo que promete levar você para um universo épico de
+            desafios e batalhas intensas contra chefões temíveis! Neste jogo de
+            ação, você vai embarcar em uma jornada através de 5 mundos únicos,
+            cada um dominado por um chefão que desafiará suas habilidades e
+            estratégias.
             <p>
-              Comecando pela floresta, decidimos que combinaria com um mito
-              clássico: O lobisomen, que pelo o que conhecemos, optaria por um
-              combate de mais curto alcance, não é? mas não se engane
+              Cada boss traz consigo uma história e um estilo de combate
+              próprio, tornando cada batalha uma experiência completamente nova.
+              E não pense que será fácil — apenas os mais corajosos e
+              habilidosos conseguirão derrotar todos os chefões e restaurar a
+              paz nos diferentes mundos.
             </p>
-            <p></p>
+            <p>
+            Se você gosta de desafios épicos, gráficos imersivos e batalhas emocionantes, Helsing é o jogo perfeito para você. Venha fazer parte dessa aventura criada por quem ama games tanto quanto você!
+            </p>
           </article>
           <img src={Logo} className="bg-zinc-900 rounded-md p-10"></img>
         </div>

@@ -7,7 +7,7 @@ import Frank from "../assets/Frank.png"
 function Menu() {
   return (
     <main className="bg-opacity-45 bg-black">
-      <div className="container mx-auto px-5 md:px-0 py-40 ">
+      <div className="container mx-auto px-5 py-40 ">
         <div className="grid lg:grid-cols-2">
           <div className="menuBanner grid grid-rows-2">
             <div className="text-white">
