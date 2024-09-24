@@ -46,7 +46,6 @@ function CardMonster({ imageSrc, altText, TextCard, DescCard, DescModal, AtqNorm
                     <div className="AtqEspecial1 bg-zinc-900 text-center rounded-sm">Ataque Especial: </div>
                     <div className="AtqEspecial2 bg-zinc-900 text-center rounded-sm">a</div>
                     </div>
-                    {/*footer*/}
                     <div className="flex items-center justify-end p-6 border-t border-solid rounded-b bg-zinc-900">
                       <button
                         className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm modalButton"

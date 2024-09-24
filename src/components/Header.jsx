@@ -37,12 +37,18 @@ function Header() {
               {dropdownVisible && (
                 <ul className="absolute bg-zinc-900 text-white text-sm rounded-lg mt-1 p-2 w-48">
                   <li>
-                    <a href="/Cenarios.jsx" className="block px-4 py-2 hover:bg-gray-700">
+                    <a
+                      href="/Cenarios.jsx"
+                      className="block px-4 py-2 hover:bg-gray-700"
+                    >
                       Cenários
                     </a>
                   </li>
                   <li>
-                    <a href="/Bosses.jsx" className="block px-4 py-2 hover:bg-gray-700">
+                    <a
+                      href="/Bosses.jsx"
+                      className="block px-4 py-2 hover:bg-gray-700"
+                    >
                       Chefões
                     </a>
                   </li>
@@ -77,28 +83,18 @@ function Header() {
           isVisible ? "" : "hidden"
         }`}
       >
-        <ul className="text-xl w-screen justify-center text-center py-3">
-          <li className="relative">
-              <ul className="absolute bg-zinc-900 text-white text-sm rounded-lg mt-1 p-2 w-full">
-                <li>
-                  <a href="./Cenarios.jsx " className="RTDyans block px-4 py-2 hover:bg-gray-700 text-xl">
-                    Cenários
-                  </a>
-                </li>
-                <li>
-                  <a href="/Bosses.jsx" className="RTDyans block px-4 py-2 hover:bg-gray-700">
-                    Chefões
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="RTDyans block px-4 py-2 hover:bg-gray-700">
-                    Download
-                  </a>
-                </li>
-              </ul>
+        <ul className="text-xl w-screen justify-center text-center RTDyans">
+          <li className="p-2"> 
+            <a>Cenários</a>
           </li>
           <li className="p-2">
-            <a className="RTDyans Item">Sobre Nós</a>
+            <a>Chefões</a>
+          </li>
+          <li className="p-2">
+            <a>Download</a>
+          </li>
+          <li className="p-2">
+            <a>Sobre</a>
           </li>
         </ul>
       </div>

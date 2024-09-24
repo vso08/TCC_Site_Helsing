@@ -10,7 +10,7 @@ function Sobre() {
         </h1>
         <img alt="Logo" className="w-24 rounded-md" />
       </div>
-      <div className=" bg-black text-white RTDyans p-5">
+      <div className=" bg-black text-white RTDyans p-5 ">
         <div className="container mx-auto lg:flex text-xl">
           <article className="pt-3 p-7">
             Criado por um grupo apaixonado por videogames desde a infância,
