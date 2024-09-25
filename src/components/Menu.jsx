@@ -2,11 +2,11 @@ import HelsingLogo from "../assets/logo.png";
 import "../App.css";
 import Lobo from "../assets/Lobi.png";
 import Vamp from "../assets/vamp.png";
-import Frank from "../assets/Frank.png"
+import Frank from "../assets/Frank.png";
 
 function Menu() {
   return (
-    <main className="bg-opacity-45 bg-black">
+    <main className="bg-opacity-45 bg-black" id="menu">
       <div className="container mx-auto px-5 py-40 ">
         <div className="grid lg:grid-cols-2">
           <div className="menuBanner grid grid-rows-2">
@@ -15,18 +15,24 @@ function Menu() {
                 Se desafie contra inimigos poderosos e cenários deslumbrantes
               </h1>
             </div>
-            <div className="grid md:grid-cols-4 grid-cols-2 place-items-center">
-              <div className="imgMenu Lobo flex">
-                <img src={Lobo} className="Lobo bg-black bg-opacity-35"></img>
+            <div className="grid md:grid-cols-4 grid-cols-2 place-items-center gap-2 pb-10">
+              <div className="imgMenu divLobo flex">
+                <img
+                  src={Lobo}
+                  className="Lobo p-5 bg-black bg-opacity-65"
+                ></img>
               </div>
-              <div className="imgMenu Frank flex">
-                <img src={Vamp} className="Vamp bg-black bg-opacity-35"></img>
+              <div className="imgMenu divVamp flex">
+                <img
+                  src={Vamp}
+                  className="Vamp  bg-black bg-opacity-65 ps-2"
+                ></img>
               </div>
-              <div className="imgMenu Vamp flex">
-                <img src={Frank} className="Frank bg-black bg-opacity-35"></img>
+              <div className="imgMenu divFrank flex ">
+                <img src={Frank} className="Frank bg-black bg-opacity-65 w-full scale-95"></img>
               </div>
-              <div className="imgMenu Ult flex">
-                <img src={Lobo} className="bg-black bg-opacity-35"></img>
+              <div className="imgMenu flex">
+                <h1>?</h1>
               </div>
             </div>
           </div>

@@ -6,6 +6,7 @@ import Placa from "../assets/Placa.png";
 import "../App.css";
 import { motion } from "framer-motion";
 
+
 const images = [img1, img2, img3];
 
 function Cenario() {
@@ -17,7 +18,7 @@ function Cenario() {
   }, []);
 
   return (
-    <div className="bg-zinc-950">
+    <div className="bg-zinc-950" id="cenarios">
       <div className="MainTxt flex justify-between container mx-auto p-5">
         <h1 className="RTDyans text-white text-5xl md:text-6xl self-center py-6 rounded-md ">
           <span className="C text-8xl">C</span>enários

@@ -1,111 +1,192 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import Lobo from "../assets/Lobi.png";
 import Tocha from "../assets/Tocha.png";
+import Frank from "../assets/Frank.png";
+import Lupa from "../assets/Lupa.png";
+import Vamp from "../assets/vamp.png";
+import m1 from "../assets/m1.jpeg";
+import m2 from "../assets/m2.jpeg";
+import m3 from "../assets/m3.jpeg";
+import Claw from "../assets/Claw.png";
+import Bite from "../assets/bite.png";
 
-function CardMonster({ imageSrc, altText, TextCard, DescCard, DescModal, AtqNormal }) {
-  const [showModal, setShowModal] = useState(false);
+function Modal({ isOpen, onClose, content }) {
+  if (!isOpen) return null;
 
   return (
-    <div className="flex bg-neutral-900 p-3 rounded-lg text-white">
+    <>
+      <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none RTDyans">
+        <div className="relative w-full max-w-4xl mx-auto my-6 max-h-screen">
+          <div className="relative flex flex-col w-full p-0 bg-zinc-800 rounded-lg shadow-lg outline-none focus:outline-none overflow-y-auto max-h-screen">
+            <div className="flex items-start justify-between p-5 bg-zinc-950 rounded-t">
+              <h3 className="text-4xl font-semibold">{content.title}</h3>
+              <button
+                className="text-white bg-red-500 rounded-full p-2"
+                onClick={onClose}
+              >
+                X
+              </button>
+            </div>
+            <div className="flex flex-col md:flex-row p-5 items-center gap-4 w-full mt-5">
+              <img
+                src={content.imageSrc}
+                alt={content.altText}
+                className="object-contain w-full md:w-1/3 max-h-96 p-3 bg-zinc-900 rounded-md"
+              />
+              <p className="flex-1 p-2 text-center bg-zinc-900 rounded-md md:text-lg">
+                {content.description}
+              </p>
+            </div>
+            <div className="px-5 w-full mb-5 py-2">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+                <div className="bg-zinc-900 text-center rounded-sm p-2">
+                  <p>Ataque Normal:</p>
+                  <img
+                    src={content.normalAttack}
+                    alt="Ataque Normal"
+                    className="mx-auto"
+                  />
+                </div>
+                <div className="bg-zinc-900 text-center rounded-sm p-2">
+                  <p>Ataque Especial:</p>
+                  <img
+                    src={content.especialAttack}
+                    alt="Ataque Especial"
+                    className="mx-auto"
+                  />
+                </div>
+                <div className="bg-zinc-900 text-center rounded-sm p-2">
+                  <p>Cenário:</p>
+                  <img
+                    src={content.scenario}
+                    alt="Ataque Normal"
+                    className="mx-auto self-center mt-5 rounded-md"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center justify-end p-4 bg-zinc-950 rounded-b">
+              <button
+                className="px-6 py-2 text-sm font-bold text-white uppercase bg-red-900 rounded-md"
+                onClick={onClose}
+              >
+                Voltar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="fixed inset-0 z-40 bg-black opacity-50"></div>
+    </>
+  );
+}
+
+Modal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  content: PropTypes.shape({
+    title: PropTypes.string,
+    imageSrc: PropTypes.string,
+    altText: PropTypes.string,
+    description: PropTypes.string,
+    normalAttack: PropTypes.string,
+    scenario: PropTypes.string,
+    especialAttack: PropTypes.string,
+  }),
+};
+
+function CardMonster({ imageSrc, altText, TextCard, DescCard, DescModal, AtqNormal, ImgCenario, AtqEspecial }) {
+  const [showModal, setShowModal] = useState(false);
+
+  const modalContent = {
+    title: TextCard,
+    imageSrc,
+    altText,
+    description: DescModal,
+    normalAttack: AtqNormal,
+    scenario: ImgCenario,
+    especialAttack: AtqEspecial,
+  };
+
+  return (
+    <div className="flex p-3 text-white bg-neutral-900 rounded-lg">
       <img
         src={imageSrc}
         alt={altText}
-        className="p-2 w-32 rounded-md bg-zinc-950 shadow-2xl"
+        className="w-32 p-2 bg-zinc-950 rounded-md shadow-2xl"
       />
-      <div className="text-center p-2">
-        <h1 className="bg-zinc-950 rounded-md RTDyans text-xl">{TextCard}</h1>
-        <h2 className="pt-2 RTDyans text-md">{DescCard || "Sem descrição"}</h2>
-        <div className="buttonVM">
-          <button
-            className="bg-red-700 mt-5 w-full text-md rounded-sm"
-            onClick={() => setShowModal(true)}
-          >
-            Ver mais
+      <div className="p-2 text-center">
+        <h1 className="text-xl bg-zinc-950 rounded-md RTDyans">{TextCard}</h1>
+        <h2 className="pt-5 text-md RTDyans">{DescCard || "Sem descrição"}</h2>
+        <div className="flex justify-end p-1 buttonVM">
+          <button className="mt-2 rounded-sm" onClick={() => setShowModal(true)}>
+            <img src={Lupa} alt="Ver mais" className="w-10 p-1 bg-red-800 rounded-md" />
           </button>
-          {showModal ? (
-            <>
-              <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-                <div className="relative w-auto my-6   mx-auto max-w-3xl">
-                  <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-zinc-800 outline-none focus:outline-none">
-                    <div className="flex items-start justify-between p-5 bg-zinc-900 rounded-t border-b">
-                      <h3 className="text-4xl font-semibold">{TextCard}</h3>
-                    </div>
-                    <div className="relative p-5 flex">
-                      <img src={imageSrc} className="p-3 md:p-7 object-cover max-w-full"></img>
-                      <p className="my-10 p-2 rounded-md bg-zinc-900 md:text-lg leading-relaxed">
-                        {DescModal}
-                      </p>
-                    </div>
-                    <div className="ataques flex">
-                      <h1 className="text-2xl font-semibold p-5 ">
-                        Habilidades
-                      </h1>
-                    </div>
-                    <div className="grid grid-rows-3 md:grid-cols-3 px-5 gap-2">
-                    <div className="AtqNormal bg-zinc-900 text-center rounded-sm">Ataque Normal: <br></br>{AtqNormal}</div>
-                    <div className="AtqEspecial1 bg-zinc-900 text-center rounded-sm">Ataque Especial: </div>
-                    <div className="AtqEspecial2 bg-zinc-900 text-center rounded-sm">a</div>
-                    </div>
-                    <div className="flex items-center justify-end p-6 border-t border-solid rounded-b bg-zinc-900">
-                      <button
-                        className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm modalButton"
-                        type="button"
-                        onClick={() => setShowModal(false)}
-                      >
-                        Voltar
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="opacity-50 fixed inset-0 z-40 bg-black"></div>
-            </>
-          ) : null}
+          <Modal
+            isOpen={showModal}
+            onClose={() => setShowModal(false)}
+            content={modalContent}
+          />
         </div>
       </div>
     </div>
   );
 }
 
+CardMonster.propTypes = {
+  imageSrc: PropTypes.string.isRequired,
+  altText: PropTypes.string.isRequired,
+  TextCard: PropTypes.string.isRequired,
+  DescCard: PropTypes.string,
+  DescModal: PropTypes.string,
+  AtqNormal: PropTypes.string,
+  ImgCenario: PropTypes.string,
+  AtqEspecial: PropTypes.string,
+};
+
 function Bosses() {
   return (
-    <div className="bg-zinc-950">
-      <header className="MainTxt flex justify-between container mx-auto p-5">
-        <h1 className="RTDyans text-white text-5xl md:text-6xl self-center py-6 rounded-md">
-          <span className="C text-8xl">C</span>hefões
+    <div className="bg-zinc-950" id="bosses"> {/* Adicione o ID aqui */}
+      <header className="container flex justify-between p-5 mx-auto MainTxt">
+        <h1 className="self-center py-6 text-5xl text-white md:text-6xl RTDyans rounded-md">
+          <span className="text-8xl C">C</span>hefões
         </h1>
-        <img src={Tocha} alt="Logo" className="w-24 rounded-md" />
+        <img src={Tocha} alt="Logo Tocha" className="w-24 rounded-md" />
       </header>
-
       <main className="bg-black">
-        <section className="container mx-auto grid md:grid-rows-2 md:grid-cols-2 p-10 gap-20">
+        <section className="container grid gap-20 p-10 mx-auto md:grid-rows-2 md:grid-cols-2">
           <CardMonster
             imageSrc={Lobo}
-            altText="Imagem do Lobo"
-            TextCard="Lobisomen"
-            DescCard="Você se depará com o Lobisomen na floresta. Qual sua reação? correr? gritar? saiba que para Helsing, tudo isso é só mais um desafio"
-            DescModal="O desafio de uma das figuras mitológicas mais famosas do
-                        mundo se incia na floresta, o primeiro cenário de
-                        Helsing. Após interagir com o vendedor enfrente o
-                        Lobisomen!"
-            AtqNormal="Ataque com garras"
+            altText="Imagem do Lobisomem"
+            TextCard="Lobisomem"
+            DescCard="Você se depará com o Lobisomem na floresta. Qual sua reação? Correr? Gritar? Saiba que para Helsing, tudo isso é só mais um desafio."
+            DescModal="O desafio de uma das figuras mitológicas mais famosas do mundo se inicia na floresta, o primeiro cenário de Helsing. Após interagir com o vendedor, enfrente o Lobisomem!"
+            AtqNormal={Claw}
+            AtqEspecial={Bite}
+            ImgCenario={m1}
+          />
+          <CardMonster
+            imageSrc={Frank}
+            altText="Imagem do Frankenstein"
+            TextCard="Frankenstein"
+            DescCard="Mesmo sem poderes especiais, você se garante no mano-a-mano contra o Frankenstein? Teste e descubra seus limites."
+            DescModal="Em uma pacífica cidade americana, seu desafio agora é um dos maiores monstros já registrados: O Frankenstein. Teste todos os seus limites aproveitando ao máximo o personagem."
+            ImgCenario={m2}
+          />
+          <CardMonster
+            imageSrc={Vamp}
+            altText="Imagem do Drácula"
+            TextCard="Drácula"
+            DescCard="Este monstro não precisa de apresentações, o terceiro chefe de Helsing botará você em seu devido lugar."
+            DescModal="Em uma pacífica cidade americana, o seu desafio agora é um dos maiores monstros já registrados: O Drácula. Teste todos os seus limites aproveitando ao máximo o personagem."
+            ImgCenario={m3}
           />
           <CardMonster
             imageSrc={Lobo}
-            altText="Imagem do Lobo"
-            TextCard="Monstro Sem Descrição"
-          />
-          <CardMonster
-            imageSrc={Lobo}
-            altText="Imagem do Lobo"
-            TextCard="Monstro 3"
-            DescCard="Descrição do Monstro 3"
-          />
-          <CardMonster
-            imageSrc={Lobo}
-            altText="Imagem do Lobo"
-            TextCard="Monstro 4"
-            DescCard="Descrição do Monstro 4"
+            altText="Imagem do ???"
+            TextCard="???"
+            DescCard="Quem será o próximo chefe?"
           />
         </section>
       </main>

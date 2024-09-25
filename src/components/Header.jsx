@@ -38,22 +38,28 @@ function Header() {
                 <ul className="absolute bg-zinc-900 text-white text-sm rounded-lg mt-1 p-2 w-48">
                   <li>
                     <a
-                      href="/Cenarios.jsx"
+                      href="#cenarios" // Use an anchor link
                       className="block px-4 py-2 hover:bg-gray-700"
+                      onClick={() => setDropdownVisible(false)}
                     >
                       Cenários
                     </a>
                   </li>
                   <li>
                     <a
-                      href="/Bosses.jsx"
+                      href="#bosses" // Use an anchor link
                       className="block px-4 py-2 hover:bg-gray-700"
+                      onClick={() => setDropdownVisible(false)}
                     >
                       Chefões
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="block px-4 py-2 hover:bg-gray-700">
+                    <a
+                      href="#menu" // Add this if needed
+                      className="block px-4 py-2 hover:bg-gray-700"
+                      onClick={() => setDropdownVisible(false)}
+                    >
                       Download
                     </a>
                   </li>
@@ -61,18 +67,19 @@ function Header() {
               )}
             </li>
             <li>
-              <a href="#" className="Item p-3 RTDyans">
-                Sobre Nós
+              <a href="#sobre" className="Item p-3 RTDyans">
+                Sobre
               </a>
             </li>
           </ul>
         </div>
-        <div className="">
+        <div>
           <span>
             <button onClick={toggleVisibility}>
               <img
                 className="menu visible lg:hidden p-3 me-10 md:me-40"
                 src={Hamburger}
+                alt="Menu"
               />
             </button>
           </span>
@@ -84,17 +91,17 @@ function Header() {
         }`}
       >
         <ul className="text-xl w-screen justify-center text-center RTDyans">
-          <li className="p-2"> 
-            <a>Cenários</a>
+          <li className="p-2">
+            <a href="#cenarios" onClick={() => setIsVisible(false)}>Cenários</a>
           </li>
           <li className="p-2">
-            <a>Chefões</a>
+            <a href="#bosses" onClick={() => setIsVisible(false)}>Chefões</a>
           </li>
           <li className="p-2">
-            <a>Download</a>
+            <a href="#download" onClick={() => setIsVisible(false)}>Download</a>
           </li>
           <li className="p-2">
-            <a>Sobre</a>
+            <a href="#sobre" onClick={() => setIsVisible(false)}>Sobre</a>
           </li>
         </ul>
       </div>

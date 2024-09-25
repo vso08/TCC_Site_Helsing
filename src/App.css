@@ -54,6 +54,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-color: black;
 }
 
 .menuBanner {
@@ -111,3 +112,28 @@ body {
  .LobMod{
   background-image: url(./assets/m1.jpeg);
  }
+
+ .divLobo{
+  background-image: url(./assets/m1.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+ }
+
+ .divFrank{
+  background-image: url(./assets/m2.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+ }
+
+ .divVamp{
+  background-image: url(./assets/m3.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+ }
+
+ html {
+  scroll-behavior: smooth;
+}
