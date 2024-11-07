@@ -10,6 +10,8 @@ import m2 from "../assets/m2.jpeg";
 import m3 from "../assets/m3.jpeg";
 import Claw from "../assets/Claw.png";
 import Bite from "../assets/bite.png";
+import Dragao from "../assets/dragao.png";
+import VideoLobo from "../assets/videoLobo.mp4";
 
 function Modal({ isOpen, onClose, content }) {
   if (!isOpen) return null;
@@ -60,12 +62,21 @@ function Modal({ isOpen, onClose, content }) {
                   <p>Cenário:</p>
                   <img
                     src={content.scenario}
-                    alt="Ataque Normal"
+                    alt="Cenário"
                     className="mx-auto self-center mt-5 rounded-md"
                   />
                 </div>
               </div>
+              <div className="flex bg-zinc-900 mt-5 justify-center p-10 ">
+                {content.video && (
+                  <video classname="rounded-lg" controls>
+                    <source src={content.video} type="video/mp" />
+                    Seu navegador não suporta o elemento de vídeo.
+                  </video>
+                )}
+              </div>
             </div>
+            
             <div className="flex items-center justify-end p-4 bg-zinc-950 rounded-b">
               <button
                 className="px-6 py-2 text-sm font-bold text-white uppercase bg-red-900 rounded-md"
@@ -93,10 +104,21 @@ Modal.propTypes = {
     normalAttack: PropTypes.string,
     scenario: PropTypes.string,
     especialAttack: PropTypes.string,
+    video: PropTypes.string,
   }),
 };
 
-function CardMonster({ imageSrc, altText, TextCard, DescCard, DescModal, AtqNormal, ImgCenario, AtqEspecial }) {
+function CardMonster({
+  imageSrc,
+  altText,
+  TextCard,
+  DescCard,
+  DescModal,
+  AtqNormal,
+  ImgCenario,
+  AtqEspecial,
+  Video,
+}) {
   const [showModal, setShowModal] = useState(false);
 
   const modalContent = {
@@ -107,6 +129,7 @@ function CardMonster({ imageSrc, altText, TextCard, DescCard, DescModal, AtqNorm
     normalAttack: AtqNormal,
     scenario: ImgCenario,
     especialAttack: AtqEspecial,
+    video: Video,
   };
 
   return (
@@ -114,14 +137,17 @@ function CardMonster({ imageSrc, altText, TextCard, DescCard, DescModal, AtqNorm
       <img
         src={imageSrc}
         alt={altText}
-        className="w-32 p-2 bg-zinc-950 rounded-md shadow-2xl"
+        className="max-h-32 max-w-22 p-2 bg-zinc-950 rounded-md shadow-2xl"
       />
       <div className="p-2 text-center">
         <h1 className="text-xl bg-zinc-950 rounded-md RTDyans">{TextCard}</h1>
         <h2 className="pt-5 text-md RTDyans">{DescCard || "Sem descrição"}</h2>
         <div className="flex justify-end p-1 buttonVM">
-          <button className="mt-2 rounded-sm" onClick={() => setShowModal(true)}>
-            <img src={Lupa} alt="Ver mais" className="w-10 p-1 bg-red-800 rounded-md" />
+          <button
+            className="mt-2 rounded-sm flex w-full bg-red-800 justify-center"
+            onClick={() => setShowModal(true)}
+          >
+            <img src={Lupa} alt="Ver mais" className="w-10 p-1 rounded-md" />
           </button>
           <Modal
             isOpen={showModal}
@@ -143,11 +169,12 @@ CardMonster.propTypes = {
   AtqNormal: PropTypes.string,
   ImgCenario: PropTypes.string,
   AtqEspecial: PropTypes.string,
+  Video: PropTypes.string,
 };
 
 function Bosses() {
   return (
-    <div className="bg-zinc-950" id="bosses"> {/* Adicione o ID aqui */}
+    <div className="bg-zinc-950" id="bosses">
       <header className="container flex justify-between p-5 mx-auto MainTxt">
         <h1 className="self-center py-6 text-5xl text-white md:text-6xl RTDyans rounded-md">
           <span className="text-8xl C">C</span>hefões
@@ -165,6 +192,7 @@ function Bosses() {
             AtqNormal={Claw}
             AtqEspecial={Bite}
             ImgCenario={m1}
+            Video={VideoLobo}
           />
           <CardMonster
             imageSrc={Frank}
@@ -183,10 +211,12 @@ function Bosses() {
             ImgCenario={m3}
           />
           <CardMonster
-            imageSrc={Lobo}
-            altText="Imagem do ???"
-            TextCard="???"
-            DescCard="Quem será o próximo chefe?"
+            imageSrc={Dragao}
+            altText="Dragão"
+            TextCard="Dragão elemental"
+            DescCard="Os céus se abrem para uma batalha contra o male final que assola o mundo. Derrote-o e prove que você é o melhor."
+            DescModal="Na mais alta das montanhas, você enfrentará o último chefe de Helsing. Um monstro que respira fogo e que se destaca em força e agilidade. Prepare-se!"
+            ImgCenario={m1}
           />
         </section>
       </main>

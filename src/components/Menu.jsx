@@ -3,6 +3,8 @@ import "../App.css";
 import Lobo from "../assets/Lobi.png";
 import Vamp from "../assets/vamp.png";
 import Frank from "../assets/Frank.png";
+import Dragao from "../assets/dragao.png"
+
 
 function Menu() {
   return (
@@ -25,14 +27,14 @@ function Menu() {
               <div className="imgMenu divVamp flex">
                 <img
                   src={Vamp}
-                  className="Vamp  bg-black bg-opacity-65 ps-2"
+                  className="Vamp scale-110 bg-black bg-opacity-65 p-5"
                 ></img>
               </div>
               <div className="imgMenu divFrank flex ">
-                <img src={Frank} className="Frank bg-black bg-opacity-65 w-full scale-95"></img>
+                <img src={Frank} className="Frank bg-black bg-opacity-65 w-full scale-100"></img>
               </div>
-              <div className="imgMenu flex">
-                <h1>?</h1>
+              <div className="imgMenu divVamp flex">
+              <img src={Dragao} className="Vamp bg-black bg-opacity-65 scale- 90 p-3"></img>
               </div>
             </div>
           </div>

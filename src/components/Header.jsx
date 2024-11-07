@@ -38,7 +38,7 @@ function Header() {
                 <ul className="absolute bg-zinc-900 text-white text-sm rounded-lg mt-1 p-2 w-48">
                   <li>
                     <a
-                      href="#cenarios" // Use an anchor link
+                      href="#cenarios"
                       className="block px-4 py-2 hover:bg-gray-700"
                       onClick={() => setDropdownVisible(false)}
                     >
@@ -47,7 +47,7 @@ function Header() {
                   </li>
                   <li>
                     <a
-                      href="#bosses" // Use an anchor link
+                      href="#bosses"
                       className="block px-4 py-2 hover:bg-gray-700"
                       onClick={() => setDropdownVisible(false)}
                     >
@@ -56,7 +56,7 @@ function Header() {
                   </li>
                   <li>
                     <a
-                      href="#menu" // Add this if needed
+                      href="#menu" 
                       className="block px-4 py-2 hover:bg-gray-700"
                       onClick={() => setDropdownVisible(false)}
                     >
