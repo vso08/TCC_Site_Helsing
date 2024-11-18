@@ -5,9 +5,10 @@ import img3 from "../assets/m3.jpeg";
 import Placa from "../assets/Placa.png";
 import "../App.css";
 import { motion } from "framer-motion";
+import img4 from "../assets/caverrna.png"
 
 
-const images = [img1, img2, img3];
+const images = [img1, img2, img3, img4];
 
 function Cenario() {
   const carousel = useRef();

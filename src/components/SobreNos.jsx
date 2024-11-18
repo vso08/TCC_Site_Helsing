@@ -1,4 +1,4 @@
-import Menu from "../assets/menu.png";
+import Menu from "../assets/Menu.png";
 import Nos from "../assets/nos.jpeg";
 import Exc from "../assets/exc.png"
 
@@ -11,9 +11,9 @@ function Sobre() {
         </h1>
         <img alt="Logo" src={Exc} className=" rounded-md w-40 h-32 place-self-end p-2"/>
       </div>
-      <div className=" bg-black text-white RTDyans p-5 ">
+      <div className=" bg-black text-white RTDyans py-6">
         <div className="container mx-auto lg:flex text-xl">
-          <article className="pt-3 p-7">
+          <article className="pt-5 p-7">
             Criado por um grupo apaixonado por videogames desde a infância,
             Helsing é um jogo que promete levar você para um universo épico de
             desafios e batalhas intensas contra chefões temíveis! Neste jogo de
@@ -33,8 +33,6 @@ function Sobre() {
           </article>
           <img src={Menu} className="bg-zinc-900 rounded-lg p-5"></img>
         </div>
-      </div>
-      <div className="w-10 h-10">
       </div>
     </div>
   );

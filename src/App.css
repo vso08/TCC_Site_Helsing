@@ -134,6 +134,13 @@ body {
   background-size: cover;
  }
 
+ .divDragao{
+  background-image: url(./assets/caverrna.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+ }
+
  html {
   scroll-behavior: smooth;
 }

@@ -33,15 +33,15 @@ function Menu() {
               <div className="imgMenu divFrank flex ">
                 <img src={Frank} className="Frank bg-black bg-opacity-65 w-full scale-100"></img>
               </div>
-              <div className="imgMenu divVamp flex">
-              <img src={Dragao} className="Vamp bg-black bg-opacity-65 scale- 90 p-3"></img>
+              <div className="imgMenu divDragao flex">
+              <img src={Dragao} className="Dragao bg-black bg-opacity-65 scale- 90 p-3"></img>
               </div>
             </div>
           </div>
           <div className="flex justify-center text-center items-center bg-black bg-opacity-80">
             <div className="Download py-20">
               <img src={HelsingLogo} className="h-28 md:h-36 pb-9"></img>
-              <button className=" btnDownload px-10 md:px-16 py-3 text-lg text-white">
+              <button className=" btnDownload px-10 md:px-16 py-3 text-lg text-white rounded-sm">
                 <h1 className="">Baixe Já!</h1>
               </button>
             </div>

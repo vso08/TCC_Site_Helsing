@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Lobo from "../assets/Lobi.png";
 import Tocha from "../assets/Tocha.png";
 import Frank from "../assets/Frank.png";
-import Lupa from "../assets/Lupa.png";
+import Lupa from "../assets/lupa.png";
 import Vamp from "../assets/vamp.png";
 import m1 from "../assets/m1.jpeg";
 import m2 from "../assets/m2.jpeg";
@@ -12,19 +12,26 @@ import Claw from "../assets/Claw.png";
 import Bite from "../assets/bite.png";
 import Dragao from "../assets/dragao.png";
 import VideoLobo from "../assets/videoLobo.mp4";
+import m4 from "../assets/caverrna.png";
+import cer from "../assets/cer.png";
+import mao from "../assets/mao.png";
+import mor from "../assets/morcego.png";
+import rolo from "../assets/rolo.png";
+import fogo from "../assets/fogo.png";
+import gelo from "../assets/gelo.png";
 
 function Modal({ isOpen, onClose, content }) {
   if (!isOpen) return null;
 
   return (
     <>
-      <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none RTDyans">
-        <div className="relative w-full max-w-4xl mx-auto my-6 max-h-screen">
+      <div className="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none">
+        <div className="relative w-full max-w-7xl mx-auto my-6 max-h-screen">
           <div className="relative flex flex-col w-full p-0 bg-zinc-800 rounded-lg shadow-lg outline-none focus:outline-none overflow-y-auto max-h-screen">
             <div className="flex items-start justify-between p-5 bg-zinc-950 rounded-t">
               <h3 className="text-4xl font-semibold">{content.title}</h3>
               <button
-                className="text-white bg-red-500 rounded-full p-2"
+                className="text-white bg-red-900 rounded-sm p-2 "
                 onClick={onClose}
               >
                 X
@@ -67,16 +74,17 @@ function Modal({ isOpen, onClose, content }) {
                   />
                 </div>
               </div>
-              <div className="flex bg-zinc-900 mt-5 justify-center p-10 ">
+              <div className="flex bg-zinc-900 mt-5 justify-center p-5">
                 {content.video && (
-                  <video classname="rounded-lg" controls>
-                    <source src={content.video} type="video/mp" />
-                    Seu navegador não suporta o elemento de vídeo.
-                  </video>
+                  <div className="relative w-full h-96 md:h-[500px] lg:h-[700px] bg-black rounded-lg overflow-hidden">
+                    <video className="w-full h-full object-cover" controls>
+                      <source src={content.video} type="video/mp4" />
+                      Seu navegador não suporta o elemento de vídeo.
+                    </video>
+                  </div>
                 )}
               </div>
             </div>
-            
             <div className="flex items-center justify-end p-4 bg-zinc-950 rounded-b">
               <button
                 className="px-6 py-2 text-sm font-bold text-white uppercase bg-red-900 rounded-md"
@@ -200,6 +208,8 @@ function Bosses() {
             TextCard="Frankenstein"
             DescCard="Mesmo sem poderes especiais, você se garante no mano-a-mano contra o Frankenstein? Teste e descubra seus limites."
             DescModal="Em uma pacífica cidade americana, seu desafio agora é um dos maiores monstros já registrados: O Frankenstein. Teste todos os seus limites aproveitando ao máximo o personagem."
+            AtqNormal={cer}
+            AtqEspecial={mao}
             ImgCenario={m2}
           />
           <CardMonster
@@ -207,16 +217,20 @@ function Bosses() {
             altText="Imagem do Drácula"
             TextCard="Drácula"
             DescCard="Este monstro não precisa de apresentações, o terceiro chefe de Helsing botará você em seu devido lugar."
-            DescModal="Em uma pacífica cidade americana, o seu desafio agora é um dos maiores monstros já registrados: O Drácula. Teste todos os seus limites aproveitando ao máximo o personagem."
+            DescModal="Em um castelo sombrio e decadente, o lendário Drácula espera pacientemente pelo próximo caçador que ousar desafiá-lo. Com habilidades sobrenaturais, este chefe testa sua capacidade de adaptação e força em combates intensos. Prepare-se para um duelo onde cada movimento é crucial!"
+            AtqNormal={mor}
+            AtqEspecial={rolo}
             ImgCenario={m3}
           />
           <CardMonster
             imageSrc={Dragao}
-            altText="Dragão"
-            TextCard="Dragão elemental"
-            DescCard="Os céus se abrem para uma batalha contra o male final que assola o mundo. Derrote-o e prove que você é o melhor."
-            DescModal="Na mais alta das montanhas, você enfrentará o último chefe de Helsing. Um monstro que respira fogo e que se destaca em força e agilidade. Prepare-se!"
-            ImgCenario={m1}
+            altText="Imagem do Dragão"
+            TextCard="Dragão de Fogo"
+            DescCard="O desafio final está à sua frente. O poderoso Dragão de Fogo testa seu valor como caçador de monstros. Está preparado para enfrentar a fúria das chamas?"
+            DescModal="Nas profundezas de uma caverna vulcânica, o Dragão de Fogo aguarda o momento em que um guerreiro destemido o desafie. Seu poder avassalador e seus ataques de fogo implacáveis fazem deste o desafio final de Helsing. Mantenha-se firme e derrote o dragão para reivindicar a vitória definitiva!"
+            AtqNormal={fogo}
+            AtqEspecial={gelo}
+            ImgCenario={m4}
           />
         </section>
       </main>
